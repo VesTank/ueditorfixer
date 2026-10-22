@@ -8,7 +8,7 @@ Fixes the BC7 texture import error on modern GPU drivers by patching one line of
 
 Причина:
 BC7-энкодер в SDK работает на OpenCL. Его исходник (код от THQ) лежит открытым текстом внутри `uEditor_m.dll` и компилируется драйвером видеокарты при каждом запуске.
-Современные драйверы (проверено на NVIDIA RTX 3050, Nvidia 596.49 Tue May 12, 2026) собирают его как OpenCL 2.x/3.0, где у указателей есть адресное пространство `__generic`. В коде есть строка, где указатель приводится к типу без указания адресного пространства: "c bc7_quantize_endpoints(&quantized_endpoints, (float2x4 const*)&gd_subset_results[0], p_mode);"
+Современные драйверы (проверено на NVIDIA RTX 3050, Nvidia 596.49 Tue May 12, 2026) собирают его как OpenCL 2.x/3.0, где у указателей есть адресное пространство `__generic`. В коде есть строка, где указатель приводится к типу без указания адресного пространства: `bc7_quantize_endpoints(&quantized_endpoints, (float2x4 const*)&gd_subset_results[0], p_mode);`
 
 Новый компилятор отвечает ошибкой: `error: passing 'const __generic float2x4 *' ... to parameter of type 'const float2x4 *' changes address space of pointer`
 Старые драйверы собирали код как OpenCL 1.2, поэтому там проблемы не было (отсюда совет «откатить драйвер»).
