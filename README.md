@@ -33,7 +33,7 @@ BC7-энкодер в SDK работает на OpenCL. Его исходник 
 2. Запусти от администратора: `python patch_bc7.py ...\bin_x64\uEditor_m.dll`
 3. Запусти редактор и импортируй текстуры.
 
-Откат: `python patch_bc7.py C:\m3sdk\bin_x64\uEditor_m.dll --restore`
+Откат: `python patch_bc7.py ...\bin_x64\uEditor_m.dll --restore`
 
 Как нашёл причину:
 1. Исходник вытащен из DLL (поиск `__kernel` и границ строки по нулевым байтам).
@@ -81,7 +81,7 @@ BC7-енкодер в SDK працює на OpenCL. Його вихідний к
 2. Запусти від адміністратора: `python patch_bc7.py ...\bin_x64\uEditor_m.dll`
 3. Запусти редактор і імпортуй текстури.
 
-Відкат: `python patch_bc7.py C:\m3sdk\bin_x64\uEditor_m.dll --restore`
+Відкат: `python patch_bc7.py \bin_x64\uEditor_m.dll --restore`
 
 Як знайшов причину:
 1. Вихідний код витягнуто з DLL (пошук `__kernel` і меж рядка за нульовими байтами).
@@ -129,7 +129,7 @@ Requires Python 3, no third-party libraries.
 2. Run as administrator: `python patch_bc7.py ...\bin_x64\uEditor_m.dll`
 3. Launch the editor and import textures.
 
-Rollback: `python patch_bc7.py C:\m3sdk\bin_x64\uEditor_m.dll --restore`
+Rollback: `python patch_bc7.py ...\bin_x64\uEditor_m.dll --restore`
 
 How the cause was found:
 1. Extracted the source from the DLL (searched for `__kernel` and found line boundaries by null bytes).
