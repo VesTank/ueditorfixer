@@ -30,7 +30,7 @@ BC7-энкодер в SDK работает на OpenCL. Его исходник 
 Нужен Python 3, сторонние библиотеки не требуются.
 
 1. Закрой редактор и все процессы SDK (`uengine_m.exe`, `uCoordinator.exe`, `uService.exe` и прочие).
-2. Запусти от администратора: `python patch_bc7.py C:\m3sdk\bin_x64\uEditor_m.dll`
+2. Запусти от администратора: `python patch_bc7.py ...\bin_x64\uEditor_m.dll`
 3. Запусти редактор и импортируй текстуры.
 
 Откат: `python patch_bc7.py C:\m3sdk\bin_x64\uEditor_m.dll --restore`
@@ -78,7 +78,7 @@ BC7-енкодер в SDK працює на OpenCL. Його вихідний к
 Потрібен Python 3, сторонні бібліотеки не потрібні.
 
 1. Закрий редактор і всі процеси SDK (`uengine_m.exe`, `uCoordinator.exe`, `uService.exe` та інші).
-2. Запусти від адміністратора: `python patch_bc7.py C:\m3sdk\bin_x64\uEditor_m.dll`
+2. Запусти від адміністратора: `python patch_bc7.py ...\bin_x64\uEditor_m.dll`
 3. Запусти редактор і імпортуй текстури.
 
 Відкат: `python patch_bc7.py C:\m3sdk\bin_x64\uEditor_m.dll --restore`
@@ -126,7 +126,7 @@ Usage:
 Requires Python 3, no third-party libraries.
 
 1. Close the editor and all SDK processes (`uengine_m.exe`, `uCoordinator.exe`, `uService.exe`, etc.).
-2. Run as administrator: `python patch_bc7.py C:\m3sdk\bin_x64\uEditor_m.dll`
+2. Run as administrator: `python patch_bc7.py ...\bin_x64\uEditor_m.dll`
 3. Launch the editor and import textures.
 
 Rollback: `python patch_bc7.py C:\m3sdk\bin_x64\uEditor_m.dll --restore`
